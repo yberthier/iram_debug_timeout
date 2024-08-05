@@ -12,7 +12,6 @@ CONF := $(call conf_filename,${NR_DPUS},${NR_TASKLETS})
 HOST_TARGET := ${BUILDDIR}/checksum_host
 DPU_TARGET := ${BUILDDIR}/checksum_dpu
 
-COMMON_INCLUDES := common
 HOST_SOURCES := $(wildcard ${HOST_DIR}/*.c)
 DPU_SOURCES := $(wildcard ${DPU_DIR}/*.c)
 
@@ -20,7 +19,7 @@ DPU_SOURCES := $(wildcard ${DPU_DIR}/*.c)
 
 __dirs := $(shell mkdir -p ${BUILDDIR})
 
-COMMON_FLAGS := -Wall -Wextra -Werror -g -I${COMMON_INCLUDES} -Wno-unused-parameter -Wno-sign-compare -Wno-unused-function
+COMMON_FLAGS := -Wall -Wextra -Werror -g -Wno-unused-parameter -Wno-sign-compare -Wno-unused-function
 HOST_FLAGS := ${COMMON_FLAGS} -std=c11 -O3 `dpu-pkg-config --cflags --libs dpu` -DNR_TASKLETS=${NR_TASKLETS} -DNR_DPUS=${NR_DPUS}
 DPU_FLAGS := ${COMMON_FLAGS} -O2 -DNR_TASKLETS=${NR_TASKLETS}
 
