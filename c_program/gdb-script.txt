@@ -1,0 +1,7 @@
+#break in main
+break main
+run
+
+#break in timeout
+break /home/yberthier/dpu_tools/backends/ufi/src/ufi_ci.c : 359
+continue
