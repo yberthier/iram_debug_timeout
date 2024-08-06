@@ -7,7 +7,7 @@ import com.upmem.dpu.Dpu;
 import com.upmem.dpu.DpuException;
 import com.upmem.dpu.DpuSystem;
 
-public class TrivialChecksumExampleMultiRank {
+public class dpu_load_launch {
 
   public static void main(String[] args) throws DpuException {
     //try(DpuSystem system = DpuSystem.allocate(DpuSystem.ALLOCATE_ALL, "")) {

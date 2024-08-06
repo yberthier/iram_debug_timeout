@@ -29,10 +29,10 @@ ${CONF}:
 	$(RM) $(call conf_filename,*,*)
 	touch ${CONF}
 
-${HOST_TARGET}: ${HOST_SOURCES} ${COMMON_INCLUDES} ${CONF}
+${HOST_TARGET}: ${HOST_SOURCES} ${CONF}
 	$(CC) -o $@ ${HOST_SOURCES} ${HOST_FLAGS}
 
-${DPU_TARGET}: ${DPU_SOURCES} ${COMMON_INCLUDES} ${CONF}
+${DPU_TARGET}: ${DPU_SOURCES} ${CONF}
 	dpu-upmem-dpurte-clang ${DPU_FLAGS} -o $@ ${DPU_SOURCES}
 
 clean:
