@@ -18,7 +18,7 @@ int main()
     uint32_t nr_of_dpus;
     bool status = true;
 
-    DPU_ASSERT(dpu_alloc(1000, NULL, &dpu_set));
+    DPU_ASSERT(dpu_alloc(1, NULL, &dpu_set));
 
     DPU_ASSERT(dpu_get_nr_dpus(dpu_set, &nr_of_dpus));
     printf("Allocated %d DPU(s)", nr_of_dpus);
